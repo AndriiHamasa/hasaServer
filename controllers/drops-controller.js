@@ -1,21 +1,16 @@
 import Drop from "../models/drop.js";
 
-
-
 const sendMessage = async (req, res) => {
   try {
     console.log('req.body ==>> ', req.body )
-    // const { name, number } = req.body;
 
     const nickname = req.body?.nickname;
     const telegramBotToken = process.env.TELEGRAM_BOT_TOKEN;
-    // const telegramChatId = process.env.TELEGRAM_CHAT_ID;
+
     const obj = await Drop.find({ nickname })
     const telegramChatId = obj[0].chatID
 
-    // if (!name || !number) {
-    //   return res.status(400).json({ error: 'Name and number are required fields' });
-    // }
+    
 
     const textArr = []
 
