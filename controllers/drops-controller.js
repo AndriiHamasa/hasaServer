@@ -10,7 +10,7 @@ const sendMessage = async (req, res) => {
     const obj = await Drop.find({ nickname })
     const telegramChatId = obj[0].chatID
 
-    
+    // change
 
     const textArr = []
 
