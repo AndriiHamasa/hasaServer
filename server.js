@@ -7,11 +7,12 @@ import "dotenv/config";
 const { DB_HOST } = process.env;
 
 // process.env.PORT || 3000;
+const port = process.env.PORT || 3000;
 
 mongoose
   .connect(DB_HOST)
   .then(() => {
-    app.listen(3000, () => {
+    app.listen(port, () => {
       console.log("Server running. Use our API on port: 3000");
     });
   })
