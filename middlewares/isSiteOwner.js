@@ -6,7 +6,6 @@ const isSiteOwner = async (req, res, next) => {
   
   try {
     const origin = req.get("Origin");
-    console.log("Request is coming from:", typeof origin);
 
     const nickname = req.body?.nickname;
     if (nickname === "" || !nickname) throw HttpError(401);
